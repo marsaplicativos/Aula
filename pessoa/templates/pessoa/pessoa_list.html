@@ -1,0 +1,23 @@
+{% extends 'main/base.html'%}
+
+{% block content %}
+<a href="{% url 'pessoa.novo' %}">Novo</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Nascimento</th>
+            <th>Ativa</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pessoa in object_list%}
+        <tr>
+            <td>{{ pessoa.nome_completo }}</td>
+            <td>{{ pessoa.data_nascimento }}</td>
+            <td>{{ pessoa.ativo }}<td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
